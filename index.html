@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shift & Shine | Mobile Auto Care & Detailing</title>
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-dark: #070a12;
+            --bg-card: #0f172a;
+            --bg-card-hover: #1e293b;
+            --blue-primary: #0066ff;
+            --blue-light: #38bdf8;
+            --blue-glow: rgba(0, 102, 255, 0.35);
+            --border-dark: #1e293b;
+            --text-white: #ffffff;
+            --text-gray: #94a3b8;
+            --font-head: 'Teko', sans-serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-dark);
+            color: var(--text-gray);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            color: var(--text-white);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+
+        /* TOP REQUIREMENTS BANNER */
+        .top-bar {
+            background: linear-gradient(90deg, #0284c7, var(--blue-primary));
+            color: white;
+            padding: 8px 16px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        /* HEADER & NAVIGATION */
+        header {
+            background-color: rgba(7, 10, 18, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-dark);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand {
+            font-family: var(--font-head);
+            font-size: 2.2rem;
+            font-weight: 700;
+            line-height: 1;
+            color: white;
+            letter-spacing: 2px;
+        }
+
+        .brand span { color: var(--blue-primary); }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            color: var(--text-gray);
+        }
+
+        .nav-links a:hover { color: var(--blue-light); }
+
+        .header-cta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .header-socials {
+            display: flex;
+            gap: 8px;
+        }
+
+        .header-socials a {
+            width: 32px;
+            height: 32px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-gray);
+            font-size: 0.85rem;
+        }
+
+        .header-socials a:hover {
+            background: var(--blue-primary);
+            color: white;
+            border-color: var(--blue-primary);
+        }
+
+        .phone-num {
+            font-weight: 800;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .phone-num i { color: var(--blue-primary); }
+
+        .btn {
+            font-family: var(--font-head);
+            font-size: 1.3rem;
+            letter-spacing: 1px;
+            padding: 8px 24px;
+            border-radius: 4px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-blue {
+            background: linear-gradient(135deg, var(--blue-primary), #0040b3);
+            color: white;
+            box-shadow: 0 4px 20px var(--blue-glow);
+        }
+
+        .btn-blue:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(0, 102, 255, 0.5);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--border-dark);
+            color: white;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--blue-primary);
+            color: var(--blue-light);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            position: relative;
+            padding: 100px 24px;
+            background: radial-gradient(circle at top, rgba(0, 102, 255, 0.2), transparent 60%),
+                        url('https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=1600&q=80') center/cover;
+            text-align: center;
+            border-bottom: 1px solid var(--border-dark);
+        }
+
+        .sub-tag {
+            font-family: var(--font-head);
+            font-size: 1.4rem;
+            color: var(--blue-light);
+            letter-spacing: 3px;
+            margin-bottom: 8px;
+        }
+
+        .hero h1 {
+            font-family: var(--font-head);
+            font-size: 4rem;
+            line-height: 1;
+            margin-bottom: 16px;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: 0 auto 32px;
+            font-size: 1.1rem;
+        }
+
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        /* PROOF / BADGES STRIP */
+        .proof-strip {
+            background-color: #040711;
+            border-bottom: 1px solid var(--border-dark);
+            padding: 30px 24px;
+        }
+
+        .proof-inner {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+            text-align: center;
+        }
+
+        .proof-box h3 {
+            font-family: var(--font-head);
+            font-size: 2rem;
+            color: var(--blue-light);
+        }
+
+        .proof-box p {
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        /* SECTION HEADERS */
+        .section-padding { padding: 90px 24px; }
+
+        .sec-title {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 50px;
+        }
+
+        .sec-title h2 {
+            font-family: var(--font-head);
+            font-size: 3.2rem;
+            line-height: 1;
+        }
+
+        .sec-title p { color: var(--text-gray); }
+
+        /* VISUAL CATEGORY PHOTO GRID (FICKS STYLE) */
+        .category-grid {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .cat-card {
+            position: relative;
+            height: 280px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-dark);
+            display: flex;
+            align-items: flex-end;
+            padding: 24px;
+            transition: all 0.4s ease;
+        }
+
+        .cat-card img {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            z-index: 1;
+        }
+
+        .cat-overlay {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(180deg, rgba(7, 10, 18, 0.2) 0%, rgba(7, 10, 18, 0.95) 100%);
+            z-index: 2;
+        }
+
+        .cat-content {
+            position: relative;
+            z-index: 3;
+        }
+
+        .cat-card:hover img { transform: scale(1.08); }
+        .cat-card:hover { border-color: var(--blue-primary); box-shadow: 0 0 20px var(--blue-glow); }
+
+        .cat-content h3 {
+            font-family: var(--font-head);
+            font-size: 2rem;
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+
+        .cat-content p {
+            font-size: 0.85rem;
+            color: var(--blue-light);
+            font-weight: 600;
+        }
+
+        /* QUOTE ESTIMATOR CALCULATOR */
+        .calc-card {
+            max-width: 950px;
+            margin: 0 auto;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-dark);
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+        }
+
+        .calc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        .form-select, .form-input {
+            width: 100%;
+            background-color: var(--bg-dark);
+            border: 1px solid var(--border-dark);
+            padding: 14px 16px;
+            border-radius: 4px;
+            color: white;
+            outline: none;
+            font-family: var(--font-body);
+        }
+
+        .form-select:focus, .form-input:focus { border-color: var(--blue-primary); }
+
+        .quote-out {
+            background-color: #040711;
+            border: 1px solid var(--border-dark);
+            border-left: 4px solid var(--blue-primary);
+            padding: 24px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .price-val {
+            font-family: var(--font-head);
+            font-size: 3rem;
+            color: white;
+            line-height: 1;
+        }
+
+        /* SERVICES CARDS */
+        .services-grid {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-dark);
+            border-radius: 8px;
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: var(--blue-primary);
+            transform: translateY(-5px);
+        }
+
+        .card.featured {
+            border: 2px solid var(--blue-primary);
+            box-shadow: 0 0 25px var(--blue-glow);
+        }
+
+        .badge-pop {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: var(--blue-primary);
+            color: white;
+            font-weight: 800;
+            font-size: 0.7rem;
+            padding: 4px 12px;
+            border-radius: 12px;
+            text-transform: uppercase;
+        }
+
+        .card h3 {
+            font-family: var(--font-head);
+            font-size: 2.2rem;
+            margin-bottom: 8px;
+        }
+
+        .card .price {
+            font-family: var(--font-head);
+            font-size: 2.5rem;
+            color: var(--blue-light);
+            margin-bottom: 16px;
+        }
+
+        .prereq-box {
+            background: rgba(56, 189, 248, 0.1);
+            border-left: 3px solid var(--blue-light);
+            padding: 8px;
+            font-size: 0.8rem;
+            color: var(--blue-light);
+            margin-bottom: 16px;
+        }
+
+        .features-list {
+            list-style: none;
+            margin-bottom: 24px;
+            flex-grow: 1;
+        }
+
+        .features-list li {
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .features-list i { color: var(--blue-primary); }
+
+        /* MAINTENANCE & FLUIDS GRID */
+        .maint-grid {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+        }
+
+        .maint-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-dark);
+            border-radius: 8px;
+            padding: 28px;
+        }
+
+        .maint-card h3 {
+            font-family: var(--font-head);
+            font-size: 1.8rem;
+            margin-bottom: 16px;
+            color: var(--blue-light);
+        }
+
+        .maint-list { list-style: none; }
+
+        .maint-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border-dark);
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+        }
+
+        /* REVIEWS */
+        .reviews-grid {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .review-box {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-dark);
+            border-radius: 8px;
+            padding: 28px;
+        }
+
+        .stars { color: #ffc107; margin-bottom: 12px; }
+
+        /* FOOTER */
+        footer {
+            background-color: #03050a;
+            border-top: 1px solid var(--border-dark);
+            padding: 80px 24px 40px;
+        }
+
+        .footer-inner {
+            max-width: 1300px;
+            margin: 0 auto 50px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-col h4 {
+            font-family: var(--font-head);
+            font-size: 1.6rem;
+            margin-bottom: 16px;
+            color: white;
+        }
+
+        .footer-links { list-style: none; }
+
+        .footer-links li { margin-bottom: 10px; }
+
+        .footer-links a:hover { color: var(--blue-light); }
+
+        .social-row {
+            display: flex;
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .social-btn {
+            width: 38px;
+            height: 38px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1rem;
+        }
+
+        .social-btn:hover {
+            background: var(--blue-primary);
+            border-color: var(--blue-primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding-top: 24px;
+            border-top: 1px solid var(--border-dark);
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links, .header-socials { display: none; }
+            .hero h1 { font-size: 3rem; }
+            .calc-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TOP NOTICE BANNER -->
+    <div class="top-bar">
+        <i class="fa-solid fa-droplet"></i>
+        <span>MOBILE SERVICE REQUIREMENTS: On-site water spigot & outdoor power outlet required for detailing</span>
+    </div>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-inner">
+            <a href="#" class="brand">SHIFT & <span>SHINE</span></a>
+
+            <ul class="nav-links">
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#services">Packages</a></li>
+                <li><a href="#estimator">Instant Quote</a></li>
+                <li><a href="#maintenance">Oil Changes</a></li>
+            </ul>
+
+            <div class="header-cta">
+                <div class="header-socials">
+                    <a href="https://www.tiktok.com/@shiftandshinedetail?_r=1&_t=ZP-9AdiMOKPMS7" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://www.facebook.com/share/17goyMpAca/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/shiftandshinedetail?cplk=YjF5b3FzMGFvZHEx&utm_source=qr" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+
+                <a href="tel:9899481728" class="phone-num">
+                    <i class="fa-solid fa-phone"></i> (989) 948-1728
+                </a>
+                <a href="https://buy.stripe.com/6oU28r2ZWaiS0AS4GkdEs02" target="_blank" class="btn btn-blue">
+                    Book Now
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="sub-tag">TRI-CITIES PREMIUM MOBILE AUTO CARE</div>
+        <h1>HIGH-END DETAILING & MAINTENANCE.<br>DELIVERED TO YOUR DOOR.</h1>
+        <p>Deep interior restoration, ceramic paint sealants, and mobile oil changes brought directly to your home or office driveway.</p>
+
+        <div class="hero-btns">
+            <a href="#estimator" class="btn btn-blue"><i class="fa-solid fa-calculator"></i> Calculate Instant Quote</a>
+            <a href="tel:9899481728" class="btn btn-outline"><i class="fa-solid fa-phone"></i> Call (989) 948-1728</a>
+        </div>
+    </section>
+
+    <!-- PROOF STRIP -->
+    <section class="proof-strip">
+        <div class="proof-inner">
+            <div class="proof-box">
+                <h3>100% MOBILE</h3>
+                <p>Servicing Freeland, Saginaw & Midland</p>
+            </div>
+            <div class="proof-box">
+                <h3>$50 DEPOSIT</h3>
+                <p>Locks In Your Exact Appointment</p>
+            </div>
+            <div class="proof-box">
+                <h3>PRECISION CARE</h3>
+                <p>Meticulous Attention To Every Detail</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PHOTO CATEGORY CARDS SECTION (FICKS STYLE) -->
+    <section class="section-padding" id="categories">
+        <div class="sec-title">
+            <div class="sub-tag">SPECIALIZED CARE</div>
+            <h2>OUR SERVICE CATEGORIES</h2>
+            <p>Explore our lineup of high-end vehicle protection and on-site maintenance services</p>
+        </div>
+
+        <div class="category-grid">
+            <div class="cat-card">
+                <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=800&q=80" alt="Ceramic Coating">
+                <div class="cat-overlay"></div>
+                <div class="cat-content">
+                    <h3>Ceramic Coatings</h3>
+                    <p>High-Gloss Hydrophobic Paint Protection</p>
+                </div>
+            </div>
+
+            <div class="cat-card">
+                <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=800&q=80" alt="Interior Detailing">
+                <div class="cat-overlay"></div>
+                <div class="cat-content">
+                    <h3>Interior Restoration</h3>
+                    <p>Deep Steam Cleaning & Carpet Extraction</p>
+                </div>
+            </div>
+
+            <div class="cat-card">
+                <img src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=800&q=80" alt="Exterior Detailing">
+                <div class="cat-overlay"></div>
+                <div class="cat-content">
+                    <h3>Exterior Detailing</h3>
+                    <p>Clay Bar & Paint Decontamination</p>
+                </div>
+            </div>
+
+            <div class="cat-card">
+                <img src="https://images.unsplash.com/photo-1486006920555-c77dce18193b?auto=format&fit=crop&w=800&q=80" alt="Mobile Oil Service">
+                <div class="cat-overlay"></div>
+                <div class="cat-content">
+                    <h3>Driveway Maintenance</h3>
+                    <p>On-Site Oil Changes & Fluid Top-Offs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INSTANT QUOTE GENERATOR -->
+    <section class="section-padding" id="estimator" style="background-color: #040711;">
+        <div class="sec-title">
+            <div class="sub-tag">INSTANT PRICING</div>
+            <h2>CALCULATE YOUR QUOTE</h2>
+            <p>Select your vehicle category and desired service package for an immediate estimate</p>
+        </div>
+
+        <div class="calc-card">
+            <div class="calc-grid">
+                <div class="form-group">
+                    <label>1. Vehicle Type</label>
+                    <select id="vehicleType" class="form-select" onchange="calcQuote()">
+                        <option value="sedan">Sedan / Coupe</option>
+                        <option value="mid_suv">Mid-Size SUV (2-Row)</option>
+                        <option value="full_suv">Full-Size SUV / Truck / Van</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>2. Service Package</label>
+                    <select id="servicePkg" class="form-select" onchange="calcQuote()">
+                        <optgroup label="Standard Detailing Packages">
+                            <option value="tier1">Tier 1: Maintenance Detail (Prerequisite Required)</option>
+                            <option value="tier2" selected>Tier 2: Full Interior Reset</option>
+                            <option value="tier3">Tier 3: Signature Full Detail</option>
+                            <option value="tier4">Tier 4: Paint & Protect (Ceramic)</option>
+                        </optgroup>
+                        <optgroup label="Mobile Oil Changes">
+                            <option value="oil_syn">Full Synthetic Oil Service</option>
+                            <option value="oil_blend">High Mileage / Synthetic Blend</option>
+                            <option value="oil_diesel">Heavy-Duty / Diesel Service</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 20px;">
+                <label>3. Promo Code</label>
+                <div style="display: flex; gap: 10px;">
+                    <input type="text" id="promoCode" class="form-input" placeholder="Enter code (e.g. DOOR25)">
+                    <button type="button" class="btn btn-outline" onclick="applyPromo()">Apply</button>
+                </div>
+                <small id="promoMsg" style="margin-top: 5px; display: block;"></small>
+            </div>
+
+            <div class="quote-out">
+                <div>
+                    <div style="font-size: 0.8rem; text-transform: uppercase;">Estimated Total</div>
+                    <div class="price-val" id="priceOut">$160 – $200</div>
+                    <small style="color: var(--text-gray);">$50 deposit required upon booking</small>
+                </div>
+
+                <a href="https://buy.stripe.com/6oU28r2ZWaiS0AS4GkdEs02" target="_blank" class="btn btn-blue">
+                    Pay $50 Deposit To Lock In
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- DETAILING TIERS -->
+    <section class="section-padding" id="services">
+        <div class="sec-title">
+            <div class="sub-tag">SERVICE MENU</div>
+            <h2>AUTO DETAILING PACKAGES</h2>
+        </div>
+
+        <div class="services-grid">
+            <!-- TIER 1 -->
+            <div class="card">
+                <h3>Tier 1: Maintenance Detail</h3>
+                <div class="price">$80 – $120</div>
+                
+                <div class="prereq-box">
+                    <i class="fa-solid fa-info-circle"></i> <strong>PREREQUISITE:</strong> Must have received a Signature Detail baseline service first.
+                </div>
+
+                <ul class="features-list">
+                    <li><i class="fa-solid fa-check"></i> Maintenance Exterior Hand Wash</li>
+                    <li><i class="fa-solid fa-check"></i> Light Interior Vacuum & Wipe-down</li>
+                    <li><i class="fa-solid fa-check"></i> Streak-Free Glass Cleaning</li>
+                    <li><i class="fa-solid fa-check"></i> Tire & Wheel Surface Dressing</li>
+                </ul>
+                <a href="https://buy.stripe.com/6oU28r2ZWaiS0AS4GkdEs02" target="_blank" class="btn btn-outline">Select Tier 1</a>
+            </div>
+
+            <!-- TIER 2 -->
+            <div class="card featured">
+                <div class="badge-pop">Most Popular</div>
+                <h3>Tier 2: Full Interior Reset</h3>
+                <div class="price">$160 – $200</div>
+                <ul class="features-list">
+                    <li><i class="fa-solid fa-check"></i> Deep Carpet & Seat Extraction</li>
+                    <li><i class="fa-solid fa-check"></i> Leather Scrub, Condition & Steam</li>
+                    <li><i class="fa-solid fa-check"></i> Complete Crevice & Dash Detail</li>
+                    <li><i class="fa-solid fa-check"></i> Express Exterior Foam Wash</li>
+                </ul>
+                <a href="https://buy.stripe.com/6oU28r2ZWaiS0AS4GkdEs02" target="_blank" class="btn btn-blue">Book Interior Reset</a>
+            </div>
+
+            <!-- TIER 3 -->
+            <div class="card">
+                <h3>Tier 3: Signature Detail</h3>
+                <div class="price">$220 – $280</div>
+                <ul class="features-list">
+                    <li><i class="fa-solid fa-check"></i> Complete Interior Reset Included</li>
+                    <li><i class="fa-solid fa-check"></i> Paint Strip Wash Decontamination</li>
+                    <li><i class="fa-solid fa-check"></i> Mechanical Clay Bar Treatment</li>
+                    <li><i class="fa-solid fa-check"></i> 6-Month Ceramic Spray Protection</li>
+                </ul>
+                <a href="https://buy.stripe.com/6oU28r2ZWaiS0AS4GkdEs02" target="_blank" class="btn btn-outline">Book Signature Detail</a>
+            </div>
+
+            <!-- TIER 4 -->
+            <div class="card">
+                <h3>Tier 4: Paint & Protect</h3>
+                <div class="price">$350 – $450</div>
+                <ul class="features-list">
+                    <li><i class="fa-solid fa-check"></i> Signature Interior & Exterior Detail</li>
+                    <li><i class="fa-solid fa-check"></i> Single-Stage Paint Polish</li>
+                    <li><i class="fa-solid fa-check"></i> Professional Ceramic Coating</li>
+                    <li><i class="fa-solid fa-check"></i> Hydrophobic Glass Treatment</li>
+                </ul>
+                <a href="https://buy.stripe.com/6oU28r2ZWaiS0AS4GkdEs02" target="_blank" class="btn btn-outline">Book Ceramic Coating</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- MOBILE OIL & MAINTENANCE -->
+    <section class="section-padding" id="maintenance" style="background-color: #040711;">
+        <div class="sec-title">
+            <div class="sub-tag">DRIVEWAY SERVICE</div>
+            <h2>MOBILE OIL CHANGES & FLUID CARE</h2>
+        </div>
+
+        <div class="maint-grid">
+            <div class="maint-card">
+                <h3>Oil Service Rates</h3>
+                <ul class="maint-list">
+                    <li><span>Full Synthetic Service</span> <strong>$95 – $115</strong></li>
+                    <li><span>High Mileage / Blend</span> <strong>$85 – $95</strong></li>
+                    <li><span>Heavy-Duty / Diesel</span> <strong>$140 – $180</strong></li>
+                </ul>
+            </div>
+
+            <div class="maint-card">
+                <h3>On-Site Add-Ons</h3>
+                <ul class="maint-list">
+                    <li><span>Engine Air Filter</span> <strong>$25 – $40</strong></li>
+                    <li><span>Cabin Air Filter</span> <strong>$35 – $50</strong></li>
+                    <li><span>Wiper Set Install</span> <strong>$35 – $50</strong></li>
+                </ul>
+            </div>
+
+            <div class="maint-card">
+                <h3>Surcharges & Rules</h3>
+                <ul class="maint-list">
+                    <li><span>Extra Oil (>5 qts)</span> <strong>$7–$9 / qt</strong></li>
+                    <li><span>Euro Specialty Filters</span> <strong>+$15 – $25</strong></li>
+                    <li><span>Waste Disposal Fee</span> <strong>$4 – $6</strong></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="section-padding" id="reviews">
+        <div class="sec-title">
+            <div class="sub-tag">REVIEWS</div>
+            <h2>WHAT CLIENTS SAY</h2>
+        </div>
+
+        <div class="reviews-grid">
+            <div class="review-box">
+                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p style="font-style: italic;">"Trevor did an outstanding job on my truck interior right in my driveway. Extracted years of stain buildup seamlessly."</p>
+                <div style="font-weight: 700; color: white; margin-top: 10px;">— Freeland Resident</div>
+            </div>
+
+            <div class="review-box">
+                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p style="font-style: italic;">"Getting an oil change and full detail done at the exact same time saved me hours. Highly recommend!"</p>
+                <div style="font-weight: 700; color: white; margin-top: 10px;">— Tri-Cities Driver</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-col">
+                <a href="#" class="brand">SHIFT & <span>SHINE</span></a>
+                <p style="font-size: 0.85rem; margin-top: 10px;">Mobile Detailing & Maintenance Services operated by Trevor Shuart.</p>
+                
+                <div class="social-row">
+                    <a href="https://www.tiktok.com/@shiftandshinedetail?_r=1&_t=ZP-9AdiMOKPMS7" target="_blank" rel="noopener noreferrer" class="social-btn"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://www.facebook.com/share/17goyMpAca/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/shiftandshinedetail?cplk=YjF5b3FzMGFvZHEx&utm_source=qr" target="_blank" rel="noopener noreferrer" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul class="footer-links">
+                    <li><a href="#services">Interior Reset</a></li>
+                    <li><a href="#services">Signature Detail</a></li>
+                    <li><a href="#services">Ceramic Coating</a></li>
+                    <li><a href="#maintenance">Mobile Oil Change</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Get In Touch</h4>
+                <p style="margin-bottom: 8px;">
+                    <a href="tel:9899481728" style="color: white; font-weight: 700;">
+                        <i class="fa-solid fa-phone" style="color: var(--blue-primary); margin-right: 6px;"></i> (989) 948-1728
+                    </a>
+                </p>
+                <p style="margin-bottom: 8px;">
+                    <a href="mailto:shiftandshinedetail@gmail.com" style="color: white; font-weight: 700;">
+                        <i class="fa-solid fa-envelope" style="color: var(--blue-primary); margin-right: 6px;"></i> shiftandshinedetail@gmail.com
+                    </a>
+                </p>
+                <p><i class="fa-solid fa-location-dot" style="color: var(--blue-primary); margin-right: 6px;"></i> Freeland, MI & Surrounding</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Shift & Shine Mobile Detailing. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- CALCULATOR LOGIC -->
+    <script>
+        let discount = 0;
+        const prices = {
+            sedan: { tier1: "$80", tier2: "$160", tier3: "$220", tier4: "$350", oil_syn: "$95", oil_blend: "$85", oil_diesel: "$140" },
+            mid_suv: { tier1: "$100", tier2: "$180", tier3: "$250", tier4: "$400", oil_syn: "$105", oil_blend: "$90", oil_diesel: "$160" },
+            full_suv: { tier1: "$120", tier2: "$200", tier3: "$280", tier4: "$450", oil_syn: "$115", oil_blend: "$95", oil_diesel: "$180" }
+        };
+
+        function calcQuote() {
+            const vehicle = document.getElementById('vehicleType').value;
+            const pkg = document.getElementById('servicePkg').value;
+            let base = parseInt(prices[vehicle][pkg].replace('$', ''));
+            let finalP = Math.max(0, base - discount);
+
+            if (discount > 0) {
+                document.getElementById('priceOut').innerText = `$${finalP} (Saved $${discount})`;
+            } else {
+                document.getElementById('priceOut').innerText = `$${finalP} – $${finalP + 40}`;
+            }
+        }
+
+        function applyPromo() {
+            const code = document.getElementById('promoCode').value.trim().toUpperCase();
+            const msg = document.getElementById('promoMsg');
+
+            if (code === "DOOR25") {
+                discount = 25;
+                msg.style.color = "#38bdf8";
+                msg.innerText = "Code DOOR25 applied: $25 OFF!";
+            } else {
+                discount = 0;
+                msg.style.color = "#f87171";
+                msg.innerText = "Invalid code.";
+            }
+            calcQuote();
+        }
+
+        calcQuote();
+    </script>
+</body>
+</html>
